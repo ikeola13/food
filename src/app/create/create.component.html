@@ -1,0 +1,41 @@
+
+
+<!-- <p style="text-align: center; padding: 30px; ">
+  <button style="cursor: pointer;" routerLink="/all">
+    View All Questions
+  </button>
+  </p> -->
+  
+  
+  <div *ngIf="!isPosted" style="margin: 0 auto; width: 60%; padding: 10px">
+    <p style="text-align: center; font-size: 30px">Create New Post</p>
+    <form>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Title</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" #title></textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Description</label>
+        <input type="title" class="form-control" id="exampleFormControlInput1" #description>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Image</label>
+        <input type="file" (change)="fileChangeEvent($event)" class="form-control" id="exampleFormControlInput1" #image>
+      </div>
+     
+  
+      <div>
+        <button type="button" class="btn btn-dark but" (click)="submit(title,description,image)">Submit</button>
+      </div>
+    </form>
+  </div>
+  
+  <div *ngIf="isPosted" style="text-align: center">
+  
+    <p>Question Created</p>
+    Thanks!
+    <p>
+    <button (click)="another1()">Another Question ? </button>
+  </p>
+  
+  </div>
